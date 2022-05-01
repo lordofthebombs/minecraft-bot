@@ -1,0 +1,22 @@
+{
+  "name": "minecraft-bot",
+  "version": "1.0.0",
+  "description": "Minecraft bot for goofs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordofthebombs/minecraft-bot.git"
+  },
+  "author": "Bader Abdulwaseem",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/lordofthebombs/minecraft-bot/issues"
+  },
+  "homepage": "https://github.com/lordofthebombs/minecraft-bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
