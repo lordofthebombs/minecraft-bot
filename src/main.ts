@@ -1,7 +1,7 @@
 import { Client, Intents } from "discord.js";
 
 // Loading in bot token
-const token = require("../secrets.json").token;
+const token = require("../config.json").token;
 
 // Creatomg client instance
 const client: Client = new Client({ intents: [Intents.FLAGS.GUILDS] })
