@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Ignoring secrets JSON file
-secrets.json
+# Ignoring config JSON file
+config.json
