@@ -1,5 +1,5 @@
-import { Client, ClientOptions } from "discord.js";
-
+import { Client } from "discord.js";
+import ready from "./listeners/ready";
 
 const token = require("../secrets.json").token;
 
@@ -9,6 +9,6 @@ const client = new Client({
     intents: []
 });
 
-client.login(token);
+ready(client);
 
-console.log(client);
+client.login(token);
