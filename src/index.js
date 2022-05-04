@@ -20,13 +20,6 @@ for (const file of commandFiles) {
 
 console.log('Starting bot...');
 
-
-// When the client is ready, run this code (only once)
-client.once('ready', () => {
-    console.log(`${client.user.username} is now online!`);
-});
-
-
 // Command handling
 client.on('interactionCreate', async interaction => {
     // Return early is command doesn't exist
@@ -44,6 +37,19 @@ client.on('interactionCreate', async interaction => {
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
     }
 });
+
+// Event handling
+const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
+
+for (const file of eventFiles) {
+    const event = require(`./events/${file}`);
+    if (event.once) {
+        client.once(event.name, (...args) => event.execute(...args));
+    }
+    else {
+        client.on(event.name, (...args) => event.execute(...args));
+    }
+}
 
 
 // Login to Discord with your client's token
