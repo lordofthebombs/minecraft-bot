@@ -22,7 +22,7 @@ console.log('Starting bot...');
 
 // Command handling
 client.on('interactionCreate', async interaction => {
-    // Return early is command doesn't exist
+    // Return early if command doesn't exist
     if (!interaction.isCommand()) return;
 
     const command = client.commands.get(interaction.commandName);
